@@ -8,6 +8,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabase, AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthGuard } from './auth/auth-guard.service';
+import { HttpModule } from '@angular/http';
 
 import 'hammerjs';
 
@@ -17,6 +18,7 @@ import { LoginComponent } from './auth/login';
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
+import { SvgViewerComponent } from './svg-viewer/svg-viewer.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -35,6 +37,7 @@ export const firebaseConfig = {
     HomeComponent,
     FeedbackDialogComponent,
     PageNotFoundComponent,
+    SvgViewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    HttpModule,
   ],
   providers: [
     AuthGuard,
