@@ -19,6 +19,8 @@ import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.compo
 import { HomeComponent } from './home/home';
 import { PageNotFoundComponent } from './page.not.found';
 import { SvgViewerComponent } from './svg-viewer/svg-viewer.component';
+import { ContactComponent } from './contact/contact.component';
+import { StartupComponent } from './startup/startup.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -38,6 +40,8 @@ export const firebaseConfig = {
     FeedbackDialogComponent,
     PageNotFoundComponent,
     SvgViewerComponent,
+    ContactComponent,
+    StartupComponent,
   ],
   imports: [
     BrowserModule,
