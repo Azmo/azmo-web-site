@@ -1,7 +1,14 @@
 <md-toolbar color="primary">
-  <button md-button routerLink="/">
-    AZMO
-  </button>
+  <div fxShow.lt-sm="false" fxShow.gt-sm="true" fxShow="true">
+    <button md-button routerLink="/">
+      AZMO
+    </button>
+  </div>
+  <div fxShow.lt-sm="true" fxShow.gt-sm="false" fxShow="false">
+    <button md-icon-button routerLink="/">
+      <md-icon>home</md-icon>
+    </button>
+  </div>
   <button md-button routerLink="/startup">
     Startups
   </button>
