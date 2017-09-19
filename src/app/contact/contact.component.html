@@ -7,22 +7,22 @@
       <form>
         <div fxLayout="column">
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Name">
+            <input mdInput placeholder="Name" name="name" [ngModel]="(contact|async)?.name" (ngModelChange)="contact.update({name: $event})">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Email">
+            <input mdInput placeholder="Email" type="email" name="email" [ngModel]="(contact|async)?.email" (ngModelChange)="contact.update({email: $event})">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Phone">
+            <input mdInput placeholder="Phone" type="tel" name="phone" [ngModel]="(contact|async)?.phone" (ngModelChange)="contact.update({phone: $event})">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <textarea mdInput placeholder="Message" rows="10"></textarea>
+            <textarea mdInput placeholder="Message" rows="10" name="message" [ngModel]="(contact|async)?.message" (ngModelChange)="contact.update({message: $event})"></textarea>
           </md-form-field>
         </div>
       </form>
     </md-card-content>
     <md-card-actions>
-      <button md-button>SEND</button>
+      <button md-button routerLink="/">SEND</button>
     </md-card-actions>
   </md-card>
 </div>

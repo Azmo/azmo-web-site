@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+  contact: FirebaseObjectObservable<any>;
 
-  constructor() { }
+  constructor(private db: AngularFireDatabase) { }
 
   ngOnInit() {
+    this.contact = this.db.object(`/users/${localStorage.getItem('currentUserId')}/contact`);
   }
 
 }
