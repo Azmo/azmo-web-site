@@ -21,6 +21,7 @@ const appRoutes: Routes = [
         data: { title: 'Startups' },
     }, {
         path: 'contact',
+        canActivate: [AuthGuard],
         component: ContactComponent,
         data: { title: 'Contact' },
     }, {

@@ -1,30 +1,42 @@
 <md-toolbar color="primary">
-  <div fxShow.lt-sm="false" fxShow.gt-sm="true" fxShow="true">
+  <span fxShow.lt-sm="false" fxShow.gt-sm="true" fxShow="true">
     <button md-button routerLink="/">
       AZMO
     </button>
-  </div>
-  <div fxShow.lt-sm="true" fxShow.gt-sm="false" fxShow="false">
-    <button md-icon-button routerLink="/">
-      <md-icon>home</md-icon>
+    <button md-button routerLink="/startup">
+      Startups
     </button>
-  </div>
-  <button md-button routerLink="/startup">
-    Startups
-  </button>
-  <button md-button routerLink="/contact">
-    Contact
-  </button>
-  <span class="fill-remaining-space"></span>
-  <div class="button-row">
-    <button *ngIf="!currentUserId" md-icon-button mdTooltip="Login" [mdMenuTriggerFor]="loginmenu">
+    <button md-button routerLink="/contact">
+      Contact
+    </button>
+  </span>
+  <span fxShow.lt-sm="true" fxShow.gt-sm="false" fxShow="false">
+    <button md-icon-button routerLink="/">
+        <md-icon>home</md-icon>
+    </button>
+    <button md-icon-button routerLink="/startup">
+        <md-icon>lightbulb_outline</md-icon>
+    </button>
+    <button md-icon-button routerLink="/contact">
+        <md-icon>mode_edit</md-icon>
+    </button>
+  </span>
+
+  <span fxShow.lt-sm="false" fxShow.gt-sm="true" fxShow="true" class="fill-remaining-space"></span>
+  <button *ngIf="!currentUserId" md-icon-button mdTooltip="Login" [mdMenuTriggerFor]="loginmenu">
       <i class="fa fa-sign-in" aria-hidden="true"></i>    
     </button>
-    <button *ngIf="currentUserId" md-button [mdMenuTriggerFor]="logoutmenu">{{currentUserName}}</button>
-    <button md-icon-button mdTooltip="Feedback" (click)="openFeedbackDialog()">
+  <span fxShow.lt-sm="false" fxShow.gt-sm="true" fxShow="true">
+      <button *ngIf="currentUserId" md-button [mdMenuTriggerFor]="logoutmenu">{{currentUserName}}</button>
+    </span>
+  <span fxShow.lt-sm="true" fxShow.gt-sm="false" fxShow="false">
+      <button *ngIf="currentUserId" md-icon-button [mdMenuTriggerFor]="logoutmenu">
+        <md-icon>person</md-icon>      
+      </button>
+    </span>
+  <button *ngIf="currentUserId" md-icon-button mdTooltip="Feedback" (click)="openFeedbackDialog()">
       <md-icon>feedback</md-icon>
     </button>
-  </div>
 </md-toolbar>
 
 <md-menu #loginmenu="mdMenu" id="login-menu">
