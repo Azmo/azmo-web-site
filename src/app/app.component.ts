@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
 
       this.currentUserId = auth.uid;
       this.currentUserName = auth.displayName;
-      this.currentUserEmail = (auth.email == null) ? auth.providerData[0].email : this.currentUserEmail = auth.email;
+      this.currentUserEmail = (auth.email == null) ? auth.providerData[0].email : auth.email;
       const user = this.db.object(`/users/${this.currentUserId}`);
       user.subscribe((item) => {
         if (!item.$exists()) {
@@ -92,6 +92,7 @@ export class AppComponent implements OnInit {
 
   loginGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('email');
     this.afAuth.auth.signInWithPopup(provider);
   }
 
