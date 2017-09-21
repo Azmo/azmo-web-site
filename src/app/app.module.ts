@@ -21,6 +21,7 @@ import { PageNotFoundComponent } from './page.not.found';
 import { SvgViewerComponent } from './svg-viewer/svg-viewer.component';
 import { ContactComponent } from './contact/contact.component';
 import { StartupComponent } from './startup/startup.component';
+import { DeveloperComponent } from './developer/developer.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -42,6 +43,7 @@ export const firebaseConfig = {
     SvgViewerComponent,
     ContactComponent,
     StartupComponent,
+    DeveloperComponent,
   ],
   imports: [
     BrowserModule,

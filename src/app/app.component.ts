@@ -48,11 +48,7 @@ export class AppComponent implements OnInit {
 
       this.currentUserId = auth.uid;
       this.currentUserName = auth.displayName;
-      if (auth.email == null) {
-        this.currentUserEmail = auth.providerData[0].email;
-      } else {
-        this.currentUserEmail = auth.email;
-      }
+      this.currentUserEmail = (auth.email == null) ? auth.providerData[0].email : this.currentUserEmail = auth.email;
       const user = this.db.object(`/users/${this.currentUserId}`);
       user.subscribe((item) => {
         if (!item.$exists()) {
