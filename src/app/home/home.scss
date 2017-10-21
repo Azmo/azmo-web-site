@@ -1,35 +1,35 @@
 // The margin between two sections
-$margin-promotion-sections: 0px;
+$margin-sections: 0px;
 $primary: #3f51b5;
 $foreground: rgba(0,0,0,.54);
 
-.docs-header-background {
+.header-background {
   background: $primary;
 }
 
-.docs-header-headline {
+.header-headline {
   color: #EDFAFD;
 }
 
-.docs-header-start {
+.header-start {
   color: $primary;
 }
 
-.docs-homepage-row {
+.homepage-row {
   color: $foreground;
 }
 
-.docs-header-background {
+.header-background {
   height: 300px;
   margin-bottom: 40px;
 }
 
-.docs-header-section {
+.header-section {
   text-align: center;
   padding-top: 60px;
 }
 
-.docs-header-headline {
+.header-headline {
   h1 {
     font-size: 56px;
     font-weight: 300;
@@ -45,7 +45,7 @@ $foreground: rgba(0,0,0,.54);
   }
 }
 
-.docs-homepage-promo {
+.homepage {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -68,36 +68,36 @@ $foreground: rgba(0,0,0,.54);
 }
 
 
-.docs-homepage-row {
+.homepage-row {
   display: flex;
   max-width: 920px;
-  margin: $margin-promotion-sections 0;
+  margin: $margin-sections 0;
 }
 
-.docs-homepage-row .docs-svg-image{
+.homepage-row .svg-image{
   max-width: 90%;
 }
 
-.docs-homepage-reverse-row {
+.homepage-reverse-row {
   flex-direction: row-reverse;
 }
 
-.docs-header-start,
-.docs-homepage-bottom-start {
+.header-start,
+.homepage-bottom-start {
   text-align: center;
-  margin: $margin-promotion-sections 0;
+  margin: $margin-sections 0;
 }
 
-.docs-homepage-promo-img,
-.docs-homepage-promo-desc {
+.homepage-img,
+.homepage-desc {
   width: 50%;
 }
 
-.docs-homepage-promo-img {
+.homepage-img {
   text-align: center;
 }
 
-.docs-homepage-promo-desc {
+.homepage-desc {
   line-height: 2;
   display: flex;
   flex-direction: column;
