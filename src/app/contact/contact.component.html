@@ -7,22 +7,22 @@
       <form>
         <div fxLayout="column">
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Name" name="name" [ngModel]="(contact|async)?.name" (ngModelChange)="contact.update({name: $event})">
+            <input mdInput placeholder="Name" name="name" [(ngModel)]="contact.name">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Email" type="email" name="email" [ngModel]="(contact|async)?.email" (ngModelChange)="contact.update({email: $event})">
+            <input mdInput placeholder="Email" type="email" name="email" [(ngModel)]="contact.email">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Phone" type="tel" name="phone" [ngModel]="(contact|async)?.phone" (ngModelChange)="contact.update({phone: $event})">
+            <input mdInput placeholder="Phone" type="tel" name="phone" [(ngModel)]="contact.phone">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <textarea mdInput placeholder="Message" rows="10" name="message" [ngModel]="(contact|async)?.message" (ngModelChange)="contact.update({message: $event})"></textarea>
+            <textarea mdInput placeholder="Message" rows="10" name="message" [(ngModel)]="contact.message"></textarea>
           </md-form-field>
         </div>
       </form>
     </md-card-content>
     <md-card-actions>
-      <button md-button (click)="openSnackBar()" routerLink="/">SEND</button>
+      <button md-button (click)="send()" routerLink="/">SEND</button>
     </md-card-actions>
   </md-card>
 </div>

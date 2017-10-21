@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { MdSnackBar } from '@angular/material';
 
 @Component({
@@ -8,17 +8,30 @@ import { MdSnackBar } from '@angular/material';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  contact: FirebaseObjectObservable<any>;
-
+  contact: any;
   constructor(private db: AngularFireDatabase, public snackBar: MdSnackBar) { }
 
   ngOnInit() {
-    this.contact = this.db.object(`/users/${localStorage.getItem('currentUserId')}/contact`);
+    this.contact = {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    };
   }
 
-  openSnackBar() {
-    this.snackBar.open('Your message submitted', 'ok', {
-      duration: 3000
-    });
+  send() {
+    const contactRef = this.db.list(`/contact`);
+    contactRef.push(this.contact)
+      .then((i) => {
+        this.snackBar.open('Your message delivered', 'ok', {
+          duration: 3000
+        });
+      },
+      (err) => {
+        this.snackBar.open('Something went wrong. Message not delivered.', 'ok', {
+          duration: 3000
+        });
+      });
   }
 }
