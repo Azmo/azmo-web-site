@@ -4,25 +4,25 @@
       <md-card-title>Want to solve your problem or have something to say? Get in touch today</md-card-title>
     </md-card-header>
     <md-card-content>
-      <form>
+      <form #contactForm="ngForm">
         <div fxLayout="column">
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Name" name="name" [(ngModel)]="contact.name">
+            <input mdInput required placeholder="Name" name="name" [(ngModel)]="contact.name">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <input mdInput placeholder="Email" type="email" name="email" [(ngModel)]="contact.email">
+            <input mdInput type="email" required placeholder="Email" type="email" name="email" [(ngModel)]="contact.email">
           </md-form-field>
           <md-form-field class="contact-full-width">
             <input mdInput placeholder="Phone" type="tel" name="phone" [(ngModel)]="contact.phone">
           </md-form-field>
           <md-form-field class="contact-full-width">
-            <textarea mdInput placeholder="Message" rows="10" name="message" [(ngModel)]="contact.message"></textarea>
+            <textarea mdInput required placeholder="Message" rows="10" name="message" [(ngModel)]="contact.message"></textarea>
           </md-form-field>
         </div>
       </form>
     </md-card-content>
     <md-card-actions>
-      <button md-button (click)="send()" routerLink="/">SEND</button>
+      <button md-button type="submit" [disabled]="contactForm.invalid" (click)="send()" routerLink="/">SEND</button>
     </md-card-actions>
   </md-card>
 </div>
